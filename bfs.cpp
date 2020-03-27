@@ -13,36 +13,36 @@ void bfs ( vector < int > graph[], int curr, bool visited[])
     while (!g_queue.empty())
     {
         curr = g_queue.front();
-        cout << curr << " " ;
         g_queue.pop();
 
-        for ( int i= 0 ; i<graph[curr].size(); i++)
+        // for every unvisited vertex v adjacent to node curr
+        // push it into the queue
+        for(auto v: graph[curr])
         {
-            if (!visited[graph[curr][i]])
+            if(!visited[v])
             {
-                visited[graph[curr][i]] = true ;
-                g_queue.push(graph[curr][i]);
+                visited[v]=true;
+                g_queue.push(v);
             }
-        }
 
+        }
     }
 }
 
 
 int main ()
 {
-    int v = 8 ; // number of nodes
+    int v = 8 ; // number of vertices
+    int e = 5;
     vector < int > graph[v];
-    int a,b;
+    int u,v;
 //taking input of either directed or undirected graph
 // adjacency list used
-    while ( true )
+    for(int i=0; i<e; i++)
     {
-        cin >> a;
-        if (a== -1 )
-            break ;
-        cin >> b;
-        graph[a].push_back(b);
+        cin >> u >> v;
+        graph[u].push_back(v);
+        //graph[v].push_back(u); uncomment line for undirected graph
     }
     bfs(graph, 1, v);
     return 0 ;
