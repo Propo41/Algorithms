@@ -2,14 +2,20 @@
 
 using namespace std ;
 
-void bfs ( vector < int > graph[], int curr, int n)
+
+void bfs ( vector < int > graph[], int curr, bool visited[])
 {
-    bool visited[n]= { false };
+
     queue < int > g_queue;
     g_queue.push(curr);
     visited[curr]= true ;
+
     while (!g_queue.empty())
     {
+        curr = g_queue.front();
+        cout << curr << " " ;
+        g_queue.pop();
+
         for ( int i= 0 ; i<graph[curr].size(); i++)
         {
             if (!visited[graph[curr][i]])
@@ -18,9 +24,7 @@ void bfs ( vector < int > graph[], int curr, int n)
                 g_queue.push(graph[curr][i]);
             }
         }
-        curr = g_queue.front();
-        cout << curr << " " ;
-        g_queue.pop();
+
     }
 }
 
