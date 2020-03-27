@@ -1,5 +1,7 @@
 # include <bits/stdc++.h>
+
 using namespace std ;
+
 void bfs ( vector < int > graph[], int curr, int n)
 {
     bool visited[n]= { false };
@@ -21,6 +23,8 @@ void bfs ( vector < int > graph[], int curr, int n)
         g_queue.pop();
     }
 }
+
+
 int main ()
 {
     int v = 8 ; // number of nodes
