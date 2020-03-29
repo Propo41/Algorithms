@@ -3,11 +3,12 @@
 using namespace std ;
 
 
-void bfs ( vector < int > graph[], int curr, bool visited[])
+void bfs ( vector < int > graph[], int curr, int v)
 {
 
     queue < int > g_queue;
     g_queue.push(curr);
+    bool visited[v]={false};
     visited[curr]= true ;
 
     while (!g_queue.empty())
