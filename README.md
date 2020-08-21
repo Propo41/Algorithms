@@ -1,2 +1,2 @@
 # Algorithms
-2.2 Algorithms course
+home to some newbie algorithms
